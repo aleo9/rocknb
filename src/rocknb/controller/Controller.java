@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package rocknb.controller;
 
 import rocknb.net.Net;
 import java.io.IOException;
-import java.net.InetSocketAddress;
 import java.util.concurrent.CompletableFuture;
 import rocknb.model.Model;
 import rocknb.Updater;
@@ -31,6 +25,7 @@ public class Controller{
     public void restartGame(int players){
         model = new Model(players);
         updater.newRound();
+        updater.connected(model.getPlayerCount(), model.getMyId());
     }
     public void startNet() throws IOException{
         net.initSocketChannel();
@@ -79,23 +74,7 @@ public class Controller{
             recordInput(idSender, choice);
         
         //means server setup message
-        }else if(arr[0].equals("setup")){
-            
-            int playerCount = Integer.parseInt(arr[1]);
-            
-            InetSocketAddress[] connections = new InetSocketAddress[playerCount];
-            
-            connections[0] = new InetSocketAddress(arr[3], Integer.parseInt(arr[4]));
-            connections[1] = new InetSocketAddress(arr[5], Integer.parseInt(arr[6]));
-            if(playerCount==3){
-                connections[2] = new InetSocketAddress(arr[7], Integer.parseInt(arr[8]));
-            }
-                //sends array with addresses to players, including your own data, and your id, which tells which index is you.
-                model.createPlayers(connections, Integer.parseInt(arr[2]));
-                
-                //tells FXMLController how many players there are and your id.
-                updater.connected(playerCount, model.getMyId());
-            }
+        }
         }); //end CompleteableFuture
         }
     }
@@ -104,13 +83,9 @@ public class Controller{
         restartGame(nr+1);
     }
     
-    //connect to server who then connects you to queued up players.
+    //not in use
     public void connectToPlayers() throws IOException{
-        //String message = "connect " +net.getMyIp() +" " +net.getMyPort();
-        System.out.println("connecting");
-        //net.send(net.server, message);
         net.connecting();
-        //System.out.println("sent request");
         
     }
     
@@ -139,48 +114,16 @@ public class Controller{
     }
     
     
-    //remove
     public void addScore(int id, int value){
         model.addScore(id, value);
     }
     
-    public void sendInput() throws IOException{
-        
-        System.out.println("my port " +net.getMyPort());
-                net.send("iiiiiiiii");
-           
-        
-    }
-    
     public void sendInput(String choice) throws IOException{
-        //System.out.println("my id " +model.getMyId());
         recordInput(model.getMyId(), choice);
         
         String message = "pick " +choice;
         net.send(message);
         
-        
-        /*
-                recordInput(model.getMyId(), choice);
-        if(choice.equals("paper")){
-            net.addPlayer=true;
-            net.activateSelector();
-        }else if(choice.equals("scissor")){
-            net.shareInfo();
-        }else{
-        String message = "pick " +choice;
-        net.send(message);
-        }
-        */
-        
-        //message format - pick playerid choice 
-        //String message = "pick " +model.getMyId() +" " +choice;
-        //for(int i = 0; i<model.getPlayerCount(); i++){
-        //    if(i!=model.getMyId()){
-        //        net.send(model.getSocketAddress(i), message);
-        //    }
-        //}
-        //recordInput(model.getMyId(), choice);
         
     }
     
@@ -203,7 +146,7 @@ public class Controller{
         int[] points = new int[players];
         
         for(int i = 0; i<players; i++){
-            System.out.println(pick[i]);
+            
             if(model.getPlayerChoice(i).equals("rock")){
                 pick[i] = 1;
             }else if(model.getPlayerChoice(i).equals("paper")){

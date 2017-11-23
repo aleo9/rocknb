@@ -25,9 +25,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text fx:id="p1name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Player 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Text fx:id="p1name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Me" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <Text fx:id="p2name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Player 2" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-            <Text fx:id="p3name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Player 3" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+            <Text fx:id="p3name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Score" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Last" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="4" GridPane.rowIndex="3">

@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package rocknb.model;
-import java.net.InetSocketAddress;
 
 public class Model {
     
@@ -30,16 +24,6 @@ public class Model {
         
     }
     
-    public void createPlayers(InetSocketAddress[] addresses, int myid){
-        this.myId = myid;
-        this.playerCount = addresses.length;
-        player = new Player[this.playerCount];
-        for(int i = 0; i<this.playerCount; i++){
-            player[i] = new Player();
-            player[i].setSocketAddress(addresses[i]);
-        }
-    }
-    
     public void resetPlayers(){
         for(int i = 0; i<playerCount; i++){
             player[i].resetRound();
@@ -51,9 +35,6 @@ public class Model {
         return myId;
     }
     
-    public InetSocketAddress getSocketAddress(int id){
-        return player[id].getSocketAddress();
-    }
     
     public void addScore(int id, int score){
         player[id].addScore(score);

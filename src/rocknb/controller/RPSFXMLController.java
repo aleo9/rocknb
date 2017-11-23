@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package rocknb.controller;
 
 import java.io.IOException;
@@ -166,6 +161,8 @@ public class RPSFXMLController implements Initializable, Updater {
     @Override
     public void initialize(URL url, ResourceBundle rb){
         System.out.println("gui initialize");
+        p3score.setDisable(true);
+        p3last.setDisable(true);
         try {
         controller = new Controller();
         connectUpdaterInterface(controller);
@@ -174,13 +171,14 @@ public class RPSFXMLController implements Initializable, Updater {
         }catch(Exception e) {
              
                     }
-        new ActionService("connect").start();
+        //new ActionService("connect").start();
         
     }   
 
     @Override
     public void connected(int players, int id){
         //implement view with right amount of players. Change name from player 1-3 to you
+        /*
         if(id==0){
             p1name.setText("Me");
         }else if(id==1){
@@ -190,12 +188,12 @@ public class RPSFXMLController implements Initializable, Updater {
         }else{
             
         }
-            
-            //if(players<3){
-            //    p3name.setText("");
-            //    p3score.setDisable(true);
-            //    p3last.setDisable(true);
-            //}
+          */  
+            if(players==3){
+                p3name.setText("Player 3");
+                p3score.setDisable(false);
+                p3last.setDisable(false);
+            }
             newRound();
     }
     //@FXML
