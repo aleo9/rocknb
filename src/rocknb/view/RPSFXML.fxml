@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="rootPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rocknb.controller.RPSFXMLController">
+   <children>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="p1name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Player 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Text fx:id="p2name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Player 2" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <Text fx:id="p3name" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Player 3" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Score" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 26;" text="Last" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="rockButton" mnemonicParsing="false" onAction="#addHandlerRock" style="-fx-font-size: 20; -fx-min-height: 100; -fx-min-width: 120;" text="Rock" />
+                  <Button fx:id="scissorButton" mnemonicParsing="false" onAction="#addHandlerScissor" style="-fx-font-size: 20; -fx-min-height: 100; -fx-min-width: 120;" text="Scissors" />
+                  <Button fx:id="paperButton" mnemonicParsing="false" onAction="#addHandlerPaper" style="-fx-font-size: 20; -fx-min-height: 100; -fx-min-width: 120;" text="Paper" />
+               </children>
+            </HBox>
+            <Label fx:id="p1score" style="-fx-font-size: 26;" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="p2score" style="-fx-font-size: 26;" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="p3score" style="-fx-font-size: 26;" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="p1last" style="-fx-font-size: 26;" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label fx:id="p2last" style="-fx-font-size: 26;" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label fx:id="p3last" style="-fx-font-size: 26;" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
