@@ -38,12 +38,12 @@ public class StartupFXMLController implements Initializable {
         if(!(portField.getText().equals(""))){
             n.serverPort = Integer.parseInt(portField.getText());
         }    
-        if(!(ipField2.getText().equals(""))){
-            n.serverIp2 = ipField2.getText();
-        }
-        if(!(portField2.getText().equals(""))){
-            n.serverPort2 = Integer.parseInt(portField2.getText());
-        }    
+        //if(!(ipField2.getText().equals(""))){
+        //    n.serverIp2 = ipField2.getText();
+        //}
+        //if(!(portField2.getText().equals(""))){
+        //    n.serverPort2 = Integer.parseInt(portField2.getText());
+        //}    
     
         //switch to other view
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/rocknb/view/RPSFXML.fxml"));

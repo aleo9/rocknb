@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -30,44 +29,24 @@
         </rowConstraints>
          <children>
             <Button fx:id="playButton" mnemonicParsing="false" onAction="#play" style="-fx-font-size: 20; -fx-min-height: 100; -fx-min-width: 120;" text="Connect" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Rules&#10;Rock beats Scissors.&#10;Scissors beats paper.&#10;Paper beats rock.&#10;&#10;Points&#10;2 players&#10;You beat your opponent: 1 point&#10;You lose or tie to your opponent: 0 point&#10;&#10;3 players&#10;Everybody beats one opponent: 1 points each&#10;You and another player beats another opponent: 1 points for the two players.&#10;You beat both opponents: 2 points&#10;You all tie: 0 points.&#10;You don't beat any opponent: 0 points.&#10;&#10;In the game, Press the Connect button to ask the server to connect you to players.&#10;When a game has been set up, the choice buttons will activate.&#10;&#10;Insert IP-address and port of host below.&#10;Then Press Connect to continue." GridPane.columnSpan="4" GridPane.rowSpan="3" />
+            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Rules&#10;Rock beats Scissors.&#10;Scissors beats paper.&#10;Paper beats rock.&#10;&#10;Points&#10;2 players&#10;You beat your opponent: 1 point&#10;You lose or tie to your opponent: 0 point&#10;&#10;3 players&#10;Everybody beats one opponent: 1 points each&#10;You and another player beats another opponent: 1 points for the two players.&#10;You beat both opponents: 2 points&#10;You all tie: 0 points.&#10;You don't beat any opponent: 0 points.&#10;&#10;In the game, Press the Connect button to ask the server to connect you to players.&#10;When a game has been set up, the choice buttons will activate.&#10;&#10;Insert IP-address and port of host below.&#10;Then Press Connect to continue." GridPane.columnSpan="5" GridPane.rowSpan="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
-            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+            <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
                <children>
-                  <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  IPadress   ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="ipField" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Port ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="portField" />
-                     </children>
-                  </HBox>
-                  <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  IPadress2   ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="ipField2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Port2 ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="portField2" />
-                     </children>
-                  </HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  IPadress   ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="ipField" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Port ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="portField" />
                </children>
-            </VBox>
+            </HBox>
          </children>
       </GridPane>
    </children>
