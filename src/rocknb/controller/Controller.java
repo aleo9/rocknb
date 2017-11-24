@@ -22,7 +22,7 @@ public class Controller{
         
     }
     
-    public void restartGame(int players){
+    private void restartGame(int players){
         model = new Model(players);
         updater.newRound();
         updater.connected(model.getPlayerCount(), model.getMyId());
@@ -53,7 +53,7 @@ public class Controller{
         //id is given to player, assigned by matchmaker
         String[] arr = message.split(" ");   
         if(arr[0].equals("otherplayer")){
-            System.out.println("got add otherplayer request");
+            
                 String ip = arr[1];
                 int port = Integer.parseInt(arr[2]);
                 //int playerCount = Integer.parseInt(arr[1]);

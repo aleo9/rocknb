@@ -15,10 +15,9 @@ public class Model {
         player = new Player[players];
         for(int i = 0; i<players; i++){
           player[i] = new Player();  
-          System.out.println("player " +i +" " +player[i]);
+          
         }
         playerCount = players;
-        System.out.println("created players");
         
 
         

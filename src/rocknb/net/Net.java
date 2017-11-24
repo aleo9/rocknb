@@ -108,6 +108,7 @@ public class Net implements Runnable
 		Thread thread = new Thread(this);
 		thread.start();
                 
+                
 	}
 	
 	public void stop(){
@@ -192,7 +193,7 @@ public class Net implements Runnable
         }
      
 
-        public void shareContactInfo(){
+        private void shareContactInfo(){
             
                 String message = "otherplayer ";
                 message +=serverIp;
@@ -200,7 +201,7 @@ public class Net implements Runnable
                 message +=serverPort;
                 
                 messagesToSend2.add(ByteBuffer.wrap(message.getBytes()));
-                System.out.println("message added to bytebuffer 2 " +message);
+                
                 
                 
                 timeToSend = true;
@@ -212,10 +213,8 @@ public class Net implements Runnable
         public void send(String message){
             
                 messagesToSend.add(ByteBuffer.wrap(message.getBytes()));
-                System.out.println("message added to bytebuffer " +message);
                 if(totalConnections==2){
                 messagesToSend2.add(ByteBuffer.wrap(message.getBytes()));
-                System.out.println("message added to bytebuffer 2 " +message);
             }
                 
                 timeToSend = true;
@@ -270,7 +269,7 @@ public class Net implements Runnable
                     totalConnections++;
                     key.interestOps(SelectionKey.OP_READ);
            
-                    //setup = false;
+                    setup = false;
                 }
     }
    

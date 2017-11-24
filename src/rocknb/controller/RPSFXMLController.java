@@ -133,17 +133,17 @@ public class RPSFXMLController implements Initializable, Updater {
 
                     if(choice.equals("connect")){
                         try{ 
-                            System.out.println("task connect");
+                            //System.out.println("task connect");
                         controller.connectToPlayers();
                         }catch(IOException e){
                         System.out.println("failed connecting");
                         }
                     }else{
-                        System.out.println("choice " +choice);
+                        
                         //send "choice" to other player.
                         try {
                         controller.sendInput(choice);
-                        //controller.sendInput();
+                        
                         }
                         catch(IOException e) {
                         System.out.println("failed sending input");
@@ -160,7 +160,7 @@ public class RPSFXMLController implements Initializable, Updater {
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        System.out.println("gui initialize");
+        
         p3score.setDisable(true);
         p3last.setDisable(true);
         try {
